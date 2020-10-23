@@ -1,13 +1,13 @@
 import React from "react";
 import TweenOne from "rc-tween-one";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { Tabs, Row, Col } from "antd";
+import { Tabs, Row, Col, Button } from "antd";
 import { Icon } from "@ant-design/compatible";
 import { getChildrenToRender } from "./utils";
 
 const TabPane = Tabs.TabPane;
 
-class Content7 extends React.Component {
+class Content8 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,22 +44,23 @@ class Content7 extends React.Component {
             className={content.className}
             gutter={32}
           >
+          <Col className={img.className} xs={24} md={8}>
+              <img src={img.children} width="100%" alt="img" />
+            </Col>
+
+
             {textChildren.map((item) => (
               <Col className={text.className} xs={24} md={8}>
                 {item.map((i) => (
                   <Row gutter={24} key={i.title}>
-                    <Col lg={24} style={{padding: 20}}>
-                      <h2 style={{color: '#fff'}}>{i.title}</h2>
+                    <Col lg={24}>
+                      <h3 color="#000">{i.title}</h3>
                       <p>{i.description}</p>
                     </Col>
                   </Row>
                 ))}
               </Col>
             ))}
-
-            <Col className={img.className} xs={24} md={8}>
-              <img src={img.children} width="100%" alt="img" />
-            </Col>
           </Row>
         )}
       </TweenOne.TweenOneGroup>
@@ -92,12 +93,16 @@ class Content7 extends React.Component {
               {...dataSource.tabsWrapper}
             >
               {tabsChildren}
+
             </TweenOne.TweenOneGroup>
           </OverPack>
+
+          <Button type="primary">Download Marketing Plan</Button>
         </div>
+        <Button type="primary">Download Marketing Plan</Button>
       </div>
     );
   }
 }
 
-export default Content7;
+export default Content8;

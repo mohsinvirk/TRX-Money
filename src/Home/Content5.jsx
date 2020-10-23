@@ -28,7 +28,7 @@ class Content5 extends React.PureComponent {
       dataSource.block.children
     );
     return (
-      <div {...props} {...dataSource.wrapper}>
+      <div {...props} {...dataSource.wrapper} id="why-us">
         <div {...dataSource.page}>
           <div key="title" {...dataSource.titleWrapper}>
             {dataSource.titleWrapper.children.map(getChildrenToRender)}

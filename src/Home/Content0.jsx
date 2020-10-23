@@ -17,9 +17,6 @@ class Content extends React.PureComponent {
     return (
       <div {...props} {...wrapper}>
         <div {...page}>
-          <div {...titleWrapper}>
-            {titleWrapper.children.map(getChildrenToRender)}
-          </div>
           <OverPack {...overPackData}>
             <QueueAnim
               type="bottom"
@@ -31,7 +28,7 @@ class Content extends React.PureComponent {
               {childWrapper.children.map((block, i) => {
                 const { children: item, ...blockProps } = block;
                 return (
-                  <Col key={i.toString()} {...blockProps}>
+                  <Col lg={6} key={i.toString()} {...blockProps}>
                     <div {...item}>
                       {item.children.map(getChildrenToRender)}
                     </div>
